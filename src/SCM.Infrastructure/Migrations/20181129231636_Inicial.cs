@@ -40,9 +40,9 @@ namespace SCM.Infrastructure.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Rua = table.Column<string>(nullable: true),
-                    CEP = table.Column<string>(nullable: true),
-                    Logradouro = table.Column<string>(nullable: true),
+                    Rua = table.Column<string>(type: "Varchar(200)", nullable: true),
+                    CEP = table.Column<string>(type: "Varchar(9)", nullable: true),
+                    Logradouro = table.Column<string>(type: "Varchar(400)", nullable: true),
                     ProprietarioId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>

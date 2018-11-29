@@ -24,6 +24,24 @@ namespace SCM.Infrastructure.Data
             modelBuilder.Entity<Veiculo>().ToTable("TbVeiculo");
 
             modelBuilder.Entity<Multa>().ToTable("TbInfracao");
+
+
+            #region           //Configurando a entidade Endereço com Fluent API
+
+            modelBuilder.Entity<Endereco>()
+                .Property(x => x.Rua)
+                .HasColumnType("Varchar(200)");
+
+            modelBuilder.Entity<Endereco>()
+            .Property(x => x.CEP)
+            .HasColumnType("Varchar(9)");
+
+            modelBuilder.Entity<Endereco>()
+            .Property(x => x.Logradouro)
+            .HasColumnType("Varchar(400)");
+            #endregion
+
+
         }
     }
 }

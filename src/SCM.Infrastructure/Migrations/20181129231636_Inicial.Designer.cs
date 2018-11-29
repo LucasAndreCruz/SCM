@@ -10,7 +10,7 @@ using SCM.Infrastructure.Data;
 namespace SCM.Infrastructure.Migrations
 {
     [DbContext(typeof(SCMContext))]
-    [Migration("20181129225902_Inicial")]
+    [Migration("20181129231636_Inicial")]
     partial class Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,13 +27,16 @@ namespace SCM.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("CEP");
+                    b.Property<string>("CEP")
+                        .HasColumnType("Varchar(9)");
 
-                    b.Property<string>("Logradouro");
+                    b.Property<string>("Logradouro")
+                        .HasColumnType("Varchar(400)");
 
                     b.Property<int>("ProprietarioId");
 
-                    b.Property<string>("Rua");
+                    b.Property<string>("Rua")
+                        .HasColumnType("Varchar(200)");
 
                     b.HasKey("Id");
 
