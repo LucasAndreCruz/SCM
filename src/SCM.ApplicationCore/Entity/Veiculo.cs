@@ -15,5 +15,9 @@ namespace SCM.ApplicationCore.Entity
         //Propriedade de Navegação (Navigation Property)
 
         public List<Multa> Multas { get; set; }
+
+        public int? MarcaId { get; set; }
+
+        public Marca Marca { get; set; }
     }
 }
